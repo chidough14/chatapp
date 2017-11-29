@@ -19,7 +19,9 @@
 <div class="container">
     <div class="row" id="app">
         <div class="offset-4 col-4 offset-sm-1 col-sm-10">
-            <li class="list-group-item active">Chat Room</li>
+            <li class="list-group-item active">Chat Room
+                <span class="badge badge-danger badge-pill">@{{ numberOfUsers }}</span>
+            </li>
             <div class="badge badge-pill badge-primary">@{{ typing }}</div>
         <ul class="list-group" v-chat-scroll>
             <Message
@@ -36,7 +38,8 @@
                     class="form-control"
                     placeholder="Type your message...."
                     v-model="message"
-                    @keyup.enter="send">
+                    @keyup.enter="send"><br>
+            <a href="" class="btn btn-warning btn-sm" @click.prevent="deleteSession">Delete Chats</a>
         </div>
     </div>
 </div>
